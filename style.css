@@ -58,7 +58,7 @@ section:first-of-type { border-top: none; }
 
 h2 {
   font-size: clamp(20px, 2.6vw, 24px);
-  margin: 0 0 32px;
+  margin: 45px 0 8px;
   font-weight: 700;
 }
 h2 .num { color: var(--accent); font-weight: 700; margin-right: 8px; }
