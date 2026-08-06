@@ -85,15 +85,6 @@ h2 .num { color: var(--accent); font-weight: 700; margin-right: 8px; }
 .hero-links a { color: var(--ink-dim); }
 .hero-links a:hover { color: var(--accent); }
 
-/* ---- stats ---- */
-.stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 32px;
-}
-.stat-num { font-size: clamp(22px, 3vw, 28px); font-weight: 800; display: block; }
-.stat-label { font-size: 13px; color: var(--ink-faint); margin-top: 4px; }
-
 /* ---- skills spec list ---- */
 .spec-row {
   display: grid;
