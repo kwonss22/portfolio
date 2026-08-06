@@ -53,7 +53,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   flex: none;
 }
 
-section { padding: 72px 0; border-top: 1px solid var(--border); }
+section { padding: 96px 0; border-top: 1px solid var(--border); }
 section:first-of-type { border-top: none; }
 
 h2 {
@@ -174,6 +174,6 @@ footer a { font-size: 14px; }
 footer .copy { color: var(--ink-faint); font-size: 12px; margin-top: 20px; }
 
 @media (max-width: 600px) {
-  section { padding: 56px 0; }
+  section { padding: 72px 0; }
   .spec-row { grid-template-columns: 1fr; gap: 6px; }
 }
