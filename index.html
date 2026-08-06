@@ -5,10 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>권소영 — Full-Stack Developer</title>
 <meta name="description" content="어린이 놀이시설 안전관리 도메인에서 기획부터 배포·운영까지 단독으로 담당한 풀스택 개발자 권소영의 포트폴리오">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%230f2942'/%3E%3Ccircle cx='16' cy='16' r='9' fill='%23ff6b35'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23141414'/%3E%3Ccircle cx='16' cy='16' r='9' fill='%23ff6b35'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,27 +21,6 @@
     <a href="mailto:kstarcps@gmail.com">kstarcps@gmail.com</a>
     <a href="https://github.com/kwonss22" target="_blank" rel="noopener">github.com/kwonss22</a>
     <a href="#goop">대표 프로젝트 보기 →</a>
-  </div>
-
-  <div class="markerboard" aria-hidden="true">
-    <div class="pin" style="top:38%; left:20%;">
-      <span class="pin-dot">1</span><span class="pin-label">Spring Boot / eGovFrame</span>
-    </div>
-    <div class="pin" style="top:68%; left:42%;">
-      <span class="pin-dot">2</span><span class="pin-label">React 18 / Redux Toolkit</span>
-    </div>
-    <div class="pin" style="top:32%; left:66%;">
-      <span class="pin-dot">3</span><span class="pin-label">OpenAI RAG 이미지 분석</span>
-    </div>
-    <div class="pin" style="top:72%; left:84%;">
-      <span class="pin-dot">4</span><span class="pin-label">기획→배포 단독 수행</span>
-    </div>
-  </div>
-  <div class="chiprow mobile-only">
-    <span class="chip"><span class="pin-dot">1</span>Spring Boot / eGovFrame</span>
-    <span class="chip"><span class="pin-dot">2</span>React 18 / Redux Toolkit</span>
-    <span class="chip"><span class="pin-dot">3</span>OpenAI RAG 이미지 분석</span>
-    <span class="chip"><span class="pin-dot">4</span>기획→배포 단독 수행</span>
   </div>
 </header>
 
@@ -107,15 +85,15 @@
 
     <p class="eyebrow" style="margin-bottom:20px;">핵심 기능 &amp; 문제해결 사례</p>
     <div class="case-grid">
-      <div class="case"><span class="pin-dot">1</span><p><strong>인증/보안 설계.</strong> Stateless JWT(HS256) + Redis 세션 레코드로 서버에서 즉시 토큰 무효화 가능. 비밀번호 인증 후 OTP 2차 인증(SMS/메일) 강제, 외부 용역 계정은 액세스 토큰 유효기간을 1일로 차등 적용. 최근 OTP 무한 시도를 막는 계정 잠금(실패 카운트, 429 응답) 진행 중.</p></div>
-      <div class="case"><span class="pin-dot">2</span><p><strong>AI 이미지 분석(RAG).</strong> 점검 사진 업로드 시 OpenAI Responses API + 자체 점검지침 Vector Store를 <code>file_search</code>로 연결해 문서 근거 기반으로 점검항목을 자동 판별. 응답을 <code>json_schema</code>로 강제해 파싱 실패 없이 구조화된 결과를 받도록 설계.</p></div>
-      <div class="case"><span class="pin-dot">3</span><p><strong>다중 관할구역 데이터 모델 리팩토링.</strong> "지역코드 1개 = 지역명 1개" 가정이 실제로는 한 코드가 두 지자체(광주시·하남시)를 공유하는 사례에서 깨짐을 확인. 지역코드를 리스트 구조로 일반화하고, 중복돼 있던 지역 조회 로직을 별도 region 패키지로 분리(파일 31개, -188/+223라인).</p></div>
-      <div class="case"><span class="pin-dot">4</span><p><strong>레거시 파일 아카이브 연동.</strong> 협회의 Windows 공유폴더(SMB) 기반 과거 점검사진 저장소를 붙여 스트리밍 복사로 UUID 파일명 규칙에 맞게 정규화. 전체 목록 반환 방식이 실사용 데이터량에서 문제되자 시설·연도별 분할 조회로 개선.</p></div>
-      <div class="case"><span class="pin-dot">5</span><p><strong>음성 입력(STT) 실사용 버그 수정.</strong> 녹음 중지 시 기존 텍스트를 덮어쓰는 버그, 포커스 전환 시 인식 세션이 안 끊기는 버그를 발견해 텍스트 누적 방식 + 언마운트 시 세션 정리로 수정. 6곳에 중복된 버튼 코드를 함수 하나로 통합(순감소 -215라인).</p></div>
-      <div class="case"><span class="pin-dot">6</span><p><strong>사진 위 위해요소 마커 표시.</strong> Konva로 점검사진 위에 위험 지점 마커를 찍고 드래그/리사이즈. 좌표를 원본 이미지 비율로 정규화 저장해 화면 크기와 무관하게 위치가 어긋나지 않도록 처리, 저장 시 사진+마커를 합성해 업로드.</p></div>
-      <div class="case"><span class="pin-dot">7</span><p><strong>협회 공식 서식 보고서 인쇄.</strong> 표지·목차·시설별 점검 상세·차트가 들어간 3,000줄 규모의 공식 서식을 HTML/CSS로 구현하고 react-to-print로 인쇄 지원. 종이 서식과 셀 단위까지 맞추기 위해 여백을 하나씩 수기로 조정.</p></div>
-      <div class="case"><span class="pin-dot">8</span><p><strong>API 쿼리스트링 인코딩 버그 수정.</strong> 문자열 직접 조합 방식이 한글·특수문자에서 파라미터가 깨지는 문제를 axios 기본 파라미터 직렬화(params 옵션)로 교체해 근본적으로 해결.</p></div>
-      <div class="case"><span class="pin-dot">9</span><p><strong>저사양 태블릿 이미지 업로드 실패 대응.</strong> 현장 피드백을 받고 업로드 전 클라이언트 단에서 이미지 리사이즈·압축(최대 1024px, 웹워커로 메인 스레드 비차단) 적용. 처리 중 로딩 스피너 표시 및 완료 전 제출 차단으로 중복 업로드·빈 이미지 저장 문제까지 함께 해결.</p></div>
+      <div class="case"><span class="n">01</span><p><strong>인증/보안 설계.</strong> Stateless JWT(HS256) + Redis 세션 레코드로 서버에서 즉시 토큰 무효화 가능. 비밀번호 인증 후 OTP 2차 인증(SMS/메일) 강제, 외부 용역 계정은 액세스 토큰 유효기간을 1일로 차등 적용. 최근 OTP 무한 시도를 막는 계정 잠금(실패 카운트, 429 응답) 진행 중.</p></div>
+      <div class="case"><span class="n">02</span><p><strong>AI 이미지 분석(RAG).</strong> 점검 사진 업로드 시 OpenAI Responses API + 자체 점검지침 Vector Store를 <code>file_search</code>로 연결해 문서 근거 기반으로 점검항목을 자동 판별. 응답을 <code>json_schema</code>로 강제해 파싱 실패 없이 구조화된 결과를 받도록 설계.</p></div>
+      <div class="case"><span class="n">03</span><p><strong>다중 관할구역 데이터 모델 리팩토링.</strong> "지역코드 1개 = 지역명 1개" 가정이 실제로는 한 코드가 두 지자체(광주시·하남시)를 공유하는 사례에서 깨짐을 확인. 지역코드를 리스트 구조로 일반화하고, 중복돼 있던 지역 조회 로직을 별도 region 패키지로 분리(파일 31개, -188/+223라인).</p></div>
+      <div class="case"><span class="n">04</span><p><strong>레거시 파일 아카이브 연동.</strong> 협회의 Windows 공유폴더(SMB) 기반 과거 점검사진 저장소를 붙여 스트리밍 복사로 UUID 파일명 규칙에 맞게 정규화. 전체 목록 반환 방식이 실사용 데이터량에서 문제되자 시설·연도별 분할 조회로 개선.</p></div>
+      <div class="case"><span class="n">05</span><p><strong>음성 입력(STT) 실사용 버그 수정.</strong> 녹음 중지 시 기존 텍스트를 덮어쓰는 버그, 포커스 전환 시 인식 세션이 안 끊기는 버그를 발견해 텍스트 누적 방식 + 언마운트 시 세션 정리로 수정. 6곳에 중복된 버튼 코드를 함수 하나로 통합(순감소 -215라인).</p></div>
+      <div class="case"><span class="n">06</span><p><strong>사진 위 위해요소 마커 표시.</strong> Konva로 점검사진 위에 위험 지점 마커를 찍고 드래그/리사이즈. 좌표를 원본 이미지 비율로 정규화 저장해 화면 크기와 무관하게 위치가 어긋나지 않도록 처리, 저장 시 사진+마커를 합성해 업로드.</p></div>
+      <div class="case"><span class="n">07</span><p><strong>협회 공식 서식 보고서 인쇄.</strong> 표지·목차·시설별 점검 상세·차트가 들어간 3,000줄 규모의 공식 서식을 HTML/CSS로 구현하고 react-to-print로 인쇄 지원. 종이 서식과 셀 단위까지 맞추기 위해 여백을 하나씩 수기로 조정.</p></div>
+      <div class="case"><span class="n">08</span><p><strong>API 쿼리스트링 인코딩 버그 수정.</strong> 문자열 직접 조합 방식이 한글·특수문자에서 파라미터가 깨지는 문제를 axios 기본 파라미터 직렬화(params 옵션)로 교체해 근본적으로 해결.</p></div>
+      <div class="case"><span class="n">09</span><p><strong>저사양 태블릿 이미지 업로드 실패 대응.</strong> 현장 피드백을 받고 업로드 전 클라이언트 단에서 이미지 리사이즈·압축(최대 1024px, 웹워커로 메인 스레드 비차단) 적용. 처리 중 로딩 스피너 표시 및 완료 전 제출 차단으로 중복 업로드·빈 이미지 저장 문제까지 함께 해결.</p></div>
     </div>
   </div>
 
@@ -127,7 +105,7 @@
         <p class="tech">Spring Boot · React · MSSQL · 풀스택 단독 개발</p>
         <div class="links"><a href="https://cps.kstar.or.kr/" target="_blank" rel="noopener">cps.kstar.or.kr</a></div>
       </div>
-      <span class="badge ok">운영중</span>
+      <span class="status-tag active">운영중</span>
     </div>
 
     <div class="prow">
@@ -140,7 +118,7 @@
           <a href="https://apps.apple.com/kr/app/cps%EC%95%88%EC%A0%84%EC%A0%90%EA%B2%80/id6523420804" target="_blank" rel="noopener">App Store</a>
         </div>
       </div>
-      <span class="badge ok">운영중</span>
+      <span class="status-tag active">운영중</span>
     </div>
 
     <div class="prow">
@@ -149,7 +127,7 @@
         <p>QR을 찍으면 놀이시설 정보·의무사항(보험가입/안전교육/안전검사)을 보여주고, AI 이미지 분석·AI 안전 챗봇·신고 기능까지 제공하는 모바일 웹. AI 페어 프로그래밍(바이브 코딩)으로 단기간에 구현.</p>
         <div class="links"><a href="https://aiqr.kriss.or.kr/" target="_blank" rel="noopener">aiqr.kriss.or.kr</a></div>
       </div>
-      <span class="badge vibe">바이브코딩</span>
+      <span class="status-tag active">바이브코딩</span>
     </div>
 
     <div class="prow">
@@ -163,7 +141,7 @@
           <a href="https://goop.kstar.or.kr/" target="_blank" rel="noopener">goop.kstar.or.kr</a>
         </div>
       </div>
-      <span class="badge ok">운영중</span>
+      <span class="status-tag active">운영중</span>
     </div>
 
     <div class="prow">
@@ -172,7 +150,7 @@
         <p>QR코드 기반 현장 점검 시스템. 개발 중, 미출시.</p>
         <div class="links"><a href="https://qrs.kstar.or.kr/login" target="_blank" rel="noopener">qrs.kstar.or.kr</a></div>
       </div>
-      <span class="badge dev">개발중</span>
+      <span class="status-tag">개발중</span>
     </div>
   </div>
 </section>
