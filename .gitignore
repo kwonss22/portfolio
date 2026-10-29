@@ -1,0 +1,14 @@
+# 사이트 파일만 추적
+/*
+!/.gitignore
+!/*.html
+/portfolio.html
+!/app.js
+!/data.js
+!/style.css
+!/assets/
+/assets/deck_motif_blue.png
+/assets/goop/*
+!/assets/goop/stt_mic_button.png
+/assets/safety/*
+!/assets/safety/dashboard.jpg
